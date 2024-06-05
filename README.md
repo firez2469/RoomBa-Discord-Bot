@@ -1,5 +1,7 @@
 # RoomBa Discord Bot
 
+A discord bot for restricting access to single-person private channels such that people need to request entry and can be kicked by the owner.
+
 ## Instructions
 
 ### Getting Started
