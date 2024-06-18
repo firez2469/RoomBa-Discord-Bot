@@ -21,6 +21,7 @@ intents = discord.Intents.all()
 # Creates a bot object with the specified command prefix and intents.
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+
 # Creates a group of commands for the bot.
 admin_commands = app_commands.Group(name="admin",description="Admin commands")
 room_commands = app_commands.Group(name="room",description="Room Commands")
@@ -248,6 +249,7 @@ async def on_ready():
         print(f'{bot.user} is connected to the following guild:\n{guild.name} (id: {guild.id})')
         synced = await bot.tree.sync()
         print(f"Synced! {len(synced)} commands(s)")
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="to secret conversations"))
 
 # Run the bot!
 bot.run(TOKEN)
